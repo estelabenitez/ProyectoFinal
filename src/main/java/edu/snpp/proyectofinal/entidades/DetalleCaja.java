@@ -7,11 +7,13 @@ package edu.snpp.proyectofinal.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -28,6 +30,9 @@ import javax.persistence.TemporalType;
 @NamedQueries({
     @NamedQuery(name = "DetalleCaja.findAll", query = "SELECT d FROM DetalleCaja d")})
 public class DetalleCaja implements Serializable {
+
+    @ManyToMany(mappedBy = "detalleCajaList")
+    private List<Alumno> alumnoList;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -126,6 +131,14 @@ public class DetalleCaja implements Serializable {
     @Override
     public String toString() {
         return "edu.snpp.proyectofinal.entidades.DetalleCaja[ iddetalleCaja=" + iddetalleCaja + " ]";
+    }
+
+    public List<Alumno> getAlumnoList() {
+        return alumnoList;
+    }
+
+    public void setAlumnoList(List<Alumno> alumnoList) {
+        this.alumnoList = alumnoList;
     }
     
 }

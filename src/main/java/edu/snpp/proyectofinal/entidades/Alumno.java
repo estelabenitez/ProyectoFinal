@@ -13,6 +13,9 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -29,6 +32,12 @@ import javax.persistence.TemporalType;
 @NamedQueries({
     @NamedQuery(name = "Alumno.findAll", query = "SELECT a FROM Alumno a")})
 public class Alumno implements Serializable {
+
+    @JoinTable(name = "alumno_detalle_caja", joinColumns = {
+        @JoinColumn(name = "alumno", referencedColumnName = "idalumno")}, inverseJoinColumns = {
+        @JoinColumn(name = "detalle_caja", referencedColumnName = "iddetalle_caja")})
+    @ManyToMany
+    private List<DetalleCaja> detalleCajaList;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -165,6 +174,14 @@ public class Alumno implements Serializable {
     @Override
     public String toString() {
         return "edu.snpp.proyectofinal.entidades.Alumno[ idalumno=" + idalumno + " ]";
+    }
+
+    public List<DetalleCaja> getDetalleCajaList() {
+        return detalleCajaList;
+    }
+
+    public void setDetalleCajaList(List<DetalleCaja> detalleCajaList) {
+        this.detalleCajaList = detalleCajaList;
     }
     
 }
