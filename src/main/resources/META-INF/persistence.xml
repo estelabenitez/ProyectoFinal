@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="com.mycompany_proyectofinal_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>edu.snpp.proyectofinal.entidades.MovimientoCaja</class>
+    <class>edu.snpp.proyectofinal.entidades.Concepto</class>
+    <class>edu.snpp.proyectofinal.entidades.Inscripcion</class>
+    <class>edu.snpp.proyectofinal.entidades.Encargado</class>
+    <class>edu.snpp.proyectofinal.entidades.Empleado</class>
+    <class>edu.snpp.proyectofinal.entidades.Grado</class>
+    <class>edu.snpp.proyectofinal.entidades.ParentescoFamiliar</class>
+    <class>edu.snpp.proyectofinal.entidades.Alumno</class>
+    <class>edu.snpp.proyectofinal.entidades.Cargo</class>
+    <class>edu.snpp.proyectofinal.entidades.MoviemientoAporte</class>
+    <class>edu.snpp.proyectofinal.entidades.DetalleCaja</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ProyectoFinal?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="12345"/>
+    </properties>
+  </persistence-unit>
+</persistence>
