@@ -8,15 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="edu.snpp.proyectofinal.modificarcuenta.ModificarCuentaFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.snpp.proyectofinal.modificarcuenta.ModificarCuentaFXMLController">
    <children>
-      <JFXButton fx:id="aceptar" buttonType="RAISED" layoutX="138.0" layoutY="287.0" onAction="#onActiononAceptar" ripplerFill="#1e77b2" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Guardar" wrapText="true">
+      <JFXButton fx:id="aceptar" buttonType="RAISED" layoutX="140.0" layoutY="338.0" onAction="#onActiononAceptar" ripplerFill="#1e77b2" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Guardar" wrapText="true">
          <effect>
             <Shadow height="0.0" radius="0.0" width="0.0" />
          </effect>
       </JFXButton>
-      <JFXButton fx:id="cancelar" buttonType="RAISED" layoutX="320.0" layoutY="287.0" onAction="#OnActiononCancelar" ripplerFill="#1e77b2" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Cancelar" wrapText="true">
+      <JFXButton fx:id="cancelar" buttonType="RAISED" layoutX="324.0" layoutY="338.0" onAction="#OnActiononCancelar" ripplerFill="#1e77b2" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Cancelar" wrapText="true">
          <effect>
             <Shadow height="0.0" radius="0.0" width="0.0" />
          </effect>
@@ -26,11 +25,12 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="contrasena" focusColor="#4981c6" labelFloat="true" layoutX="131.0" layoutY="187.0" prefHeight="26.0" prefWidth="278.0" promptText="Contraseña" unFocusColor="#726f6f" />
+      <JFXPasswordField fx:id="conactual" focusColor="#4981c6" labelFloat="true" layoutX="131.0" layoutY="187.0" prefHeight="26.0" prefWidth="278.0" promptText="Contraseña Actual" unFocusColor="#726f6f" />
       <Label fx:id="config" layoutX="108.0" layoutY="39.0" text="Configuración de la cuenta" textFill="#0a0a0a">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
+      <JFXPasswordField fx:id="connueva" focusColor="#4981c6" labelFloat="true" layoutX="131.0" layoutY="245.0" prefHeight="26.0" prefWidth="278.0" promptText="Contraseña Nueva" unFocusColor="#726f6f" />
    </children>
 </AnchorPane>
