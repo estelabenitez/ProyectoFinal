@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="656.0" prefWidth="785.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.snpp.proyectofinal.RegistroAlumno.TablaAlumnoFXMLController">
+   <children>
+      <Label layoutX="213.0" layoutY="30.0" text="Lista de Alumnos" textFill="#1b218a">
+         <font>
+            <Font name="KacstLetter" size="29.0" />
+         </font>
+      </Label>
+      <JFXTreeTableView layoutX="29.0" layoutY="118.0" prefHeight="400.0" prefWidth="737.0">
+         <columns>
+            <TreeTableColumn prefWidth="121.0" text="Nombre" />
+            <TreeTableColumn prefWidth="103.0" text="Apellido" />
+            <TreeTableColumn prefWidth="95.0" text="Dirección" />
+            <TreeTableColumn prefWidth="139.0" text="Cédula Identidad" />
+            <TreeTableColumn prefWidth="97.0" text="Fecha Nac." />
+            <TreeTableColumn prefWidth="85.0" text="Grado" />
+            <TreeTableColumn prefWidth="95.0" text="Aporte" />
+         </columns>
+      </JFXTreeTableView>
+      <JFXButton layoutX="56.0" layoutY="79.0" text="Buscar" />
+      <JFXTextField layoutX="119.0" layoutY="79.0" prefHeight="26.0" prefWidth="207.0" />
+      <JFXButton layoutX="128.0" layoutY="534.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" />
+      <JFXButton layoutX="313.0" layoutY="534.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Modificar" />
+      <JFXButton layoutX="488.0" layoutY="534.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Eliminar" />
+   </children>
+</AnchorPane>
