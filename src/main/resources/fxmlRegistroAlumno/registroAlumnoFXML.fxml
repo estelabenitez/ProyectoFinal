@@ -2,13 +2,14 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="609.0" prefWidth="672.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="edu.snpp.proyectofinal.RegistroAlumno.RegistroAlumnoFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="609.0" prefWidth="672.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.snpp.proyectofinal.RegistroAlumno.RegistroAlumnoFXMLController">
     <stylesheets>
         <URL value="@registroalumnofxml.css" />
     </stylesheets>
@@ -45,7 +46,6 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="fechnacAlum" labelFloat="true" layoutX="386.0" layoutY="306.0" promptText="Fecha de Nacimiento:" />
             <JFXTextField fx:id="aporteAlum" labelFloat="true" layoutX="386.0" layoutY="169.0" promptText="Aporte:" />
             <Label layoutX="49.0" layoutY="358.0" prefHeight="26.0" prefWidth="219.0" text="Datos Personales Encargado:">
                <font>
@@ -79,6 +79,7 @@
                </font>
             </JFXTextField>
             <JFXComboBox fx:id="parenEnca" labelFloat="true" layoutX="386.0" layoutY="441.0" prefHeight="26.0" prefWidth="167.0" promptText="Parentesco Familiar" />
+            <JFXDatePicker fx:id="fechanac" layoutX="374.0" layoutY="299.0" promptText="Fecha Nacimiento" />
          </children>
       </AnchorPane>
    </children>

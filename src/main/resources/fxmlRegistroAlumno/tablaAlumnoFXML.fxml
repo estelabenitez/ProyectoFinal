@@ -26,7 +26,7 @@
             <TreeTableColumn prefWidth="95.0" text="Aporte" />
          </columns>
       </JFXTreeTableView>
-      <JFXButton layoutX="56.0" layoutY="79.0" text="Buscar" />
+      <JFXButton layoutX="56.0" layoutY="79.0" style="-fx-background-color: lightblue; -fx-border-radius: ;" text="Buscar" />
       <JFXTextField layoutX="119.0" layoutY="79.0" prefHeight="26.0" prefWidth="207.0" />
       <JFXButton layoutX="128.0" layoutY="534.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" />
       <JFXButton layoutX="313.0" layoutY="534.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Modificar" />

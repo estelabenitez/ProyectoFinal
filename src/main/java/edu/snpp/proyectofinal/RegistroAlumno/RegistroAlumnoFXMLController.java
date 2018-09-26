@@ -3,12 +3,17 @@ package edu.snpp.proyectofinal.RegistroAlumno;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
+import edu.snpp.proyectofinal.entidades.Alumno;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -28,8 +33,7 @@ public class RegistroAlumnoFXMLController implements Initializable {
     private JFXTextField direcAlum;
     @FXML
     private JFXTextField ciAlum;
-    @FXML
-    private JFXTextField fechnacAlum;
+   
     @FXML
     private JFXTextField aporteAlum;
     @FXML
@@ -46,17 +50,47 @@ public class RegistroAlumnoFXMLController implements Initializable {
     private JFXTextField ciEnca;
     @FXML
     private JFXComboBox<?> parenEnca;
+    @FXML
+    private JFXDatePicker fechanac;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }    
 
     @FXML
     private void OnActionAgregar(ActionEvent event) {
+        EntityManager em=emf.createEntityManager();
+        Alumno a= new Alumno();
+        
+        a.setNombre(nomAlum.getText());
+        nomAlum.clear();
+        
+        a.setApellido(apeAlum.getText());
+        apeAlum.clear();
+        
+        a.setDireccion(direcAlum.getText());
+        direcAlum.clear();
+        
+        a.setCi(ciAlum.getText());
+        ciAlum.clear();
+        
+        a.setMontoAporte(Integer.parseInt(aporteAlum.getText()));
+        aporteAlum.clear();
+        
+        Calendar c=new GregorianCalendar( fechanac.getValue().getYear(),  fechanac.getValue().getMonthValue()-1,  fechanac.getValue().getDayOfMonth());
+        
+        em.getTransaction().begin();
+        em.persist(a);
+        em.getTransaction().commit();
+       
+       
+        
+        
+        
         
     }
     
