@@ -81,11 +81,13 @@ public class RegistroAlumnoFXMLController implements Initializable {
         a.setMontoAporte(Integer.parseInt(aporteAlum.getText()));
         aporteAlum.clear();
         
-        Calendar c=new GregorianCalendar( fechanac.getValue().getYear(),  fechanac.getValue().getMonthValue()-1,  fechanac.getValue().getDayOfMonth());
+        Calendar c=new GregorianCalendar(fechanac.getValue().getYear(),  fechanac.getValue().getMonthValue()-1,  fechanac.getValue().getDayOfMonth());
+        c.setTime(a.getFechaNac());
         
         em.getTransaction().begin();
-        em.persist(a);
+        em.merge(a);
         em.getTransaction().commit();
+     
        
        
         
