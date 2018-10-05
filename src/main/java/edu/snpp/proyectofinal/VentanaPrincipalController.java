@@ -29,8 +29,7 @@ public class VentanaPrincipalController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("com.mycompany_proyectofinal_jar_1.0-SNAPSHOTPU");
-         EntityManager em= emf.createEntityManager();
+       
        
     }  
     
@@ -54,6 +53,7 @@ public class VentanaPrincipalController implements Initializable {
 
     @FXML
     private void OnActionRegistro(ActionEvent event) {
+        this.cargarModulo("/fxml/RegistroAlumno/registroAlumnoFXML.fxml", "Registro");
     }
     
 
