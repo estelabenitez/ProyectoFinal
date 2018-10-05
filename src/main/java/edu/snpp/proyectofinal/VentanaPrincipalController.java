@@ -54,5 +54,7 @@ public class VentanaPrincipalController implements Initializable {
         this.cargarRegistro("/fxml/RegistroAlumno/registroAlumnoFXML.fxml", "Registro");
     }
     
+    
+    
 
 }
