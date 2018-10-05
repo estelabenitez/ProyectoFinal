@@ -14,9 +14,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.layout.AnchorPane;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
 
 
 public class VentanaPrincipalController implements Initializable {
@@ -33,7 +31,7 @@ public class VentanaPrincipalController implements Initializable {
        
     }  
     
-    private void cargarModulo(String direccionFXML, String tituloPestania) {
+    private void cargarRegistro(String direccionFXML, String tituloPestania) {
         try {
             FXMLLoader loader = new FXMLLoader();
             AnchorPane root = FXMLLoader.load(getClass().getResource(direccionFXML));
@@ -53,7 +51,7 @@ public class VentanaPrincipalController implements Initializable {
 
     @FXML
     private void OnActionRegistro(ActionEvent event) {
-        this.cargarModulo("/fxml/RegistroAlumno/registroAlumnoFXML.fxml", "Registro");
+        this.cargarRegistro("/fxml/RegistroAlumno/registroAlumnoFXML.fxml", "Registro");
     }
     
 
