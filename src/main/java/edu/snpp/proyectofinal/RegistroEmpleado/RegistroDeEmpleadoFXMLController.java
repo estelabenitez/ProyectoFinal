@@ -1,5 +1,5 @@
 
-package edu.snpp.proyectofinal.RegistroAlumno;
+package edu.snpp.proyectofinal.RegistroEmpleado;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -10,7 +10,7 @@ import javafx.fxml.Initializable;
  *
  * @author estela
  */
-public class TablaAlumnoFXMLController implements Initializable {
+public class RegistroDeEmpleadoFXMLController implements Initializable {
 
     /**
      * Initializes the controller class.

@@ -15,21 +15,22 @@
             <Font name="KacstLetter" size="29.0" />
          </font>
       </Label>
-      <JFXTreeTableView layoutX="29.0" layoutY="118.0" prefHeight="400.0" prefWidth="737.0">
+      <JFXTreeTableView fx:id="lista" layoutX="29.0" layoutY="118.0" prefHeight="400.0" prefWidth="737.0">
          <columns>
-            <TreeTableColumn prefWidth="121.0" text="Nombre" />
-            <TreeTableColumn prefWidth="103.0" text="Apellido" />
-            <TreeTableColumn prefWidth="95.0" text="Dirección" />
-            <TreeTableColumn prefWidth="139.0" text="Cédula Identidad" />
-            <TreeTableColumn prefWidth="97.0" text="Fecha Nac." />
-            <TreeTableColumn prefWidth="85.0" text="Grado" />
-            <TreeTableColumn prefWidth="95.0" text="Aporte" />
+            <TreeTableColumn fx:id="nom" prefWidth="121.0" text="Nombre" />
+            <TreeTableColumn fx:id="ape" prefWidth="103.0" text="Apellido" />
+            <TreeTableColumn fx:id="direc" prefWidth="95.0" text="Dirección" />
+            <TreeTableColumn fx:id="ci" prefWidth="139.0" text="Cédula Identidad" />
+            <TreeTableColumn fx:id="fechanac" prefWidth="97.0" text="Fecha Nac." />
+            <TreeTableColumn fx:id="grado" prefWidth="85.0" text="Grado" />
+            <TreeTableColumn fx:id="aporte" prefWidth="95.0" text="Aporte" />
          </columns>
       </JFXTreeTableView>
-      <JFXButton layoutX="56.0" layoutY="79.0" style="-fx-background-color: lightblue; -fx-border-radius: ;" text="Buscar" />
-      <JFXTextField layoutX="119.0" layoutY="79.0" prefHeight="26.0" prefWidth="207.0" />
-      <JFXButton layoutX="128.0" layoutY="534.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" />
-      <JFXButton layoutX="313.0" layoutY="534.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Modificar" />
-      <JFXButton layoutX="488.0" layoutY="534.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Eliminar" />
+      <JFXButton layoutX="56.0" layoutY="79.0" onAction="#onActionBuscar" style="-fx-background-color: lightblue; -fx-border-radius: ;" text="Buscar" />
+      <JFXTextField fx:id="txf" layoutX="119.0" layoutY="79.0" prefHeight="26.0" prefWidth="207.0" />
+      <JFXButton layoutX="128.0" layoutY="534.0" onAction="#onActionAgregar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" />
+      <JFXButton layoutX="359.0" layoutY="534.0" onAction="#onActionModificar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Modificar" />
+      <JFXButton layoutX="488.0" layoutY="534.0" onAction="#onActionEliminar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Eliminar" />
+      <JFXButton layoutX="234.0" layoutY="534.0" onAction="#onActionActualizar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Actualizar" />
    </children>
 </AnchorPane>
