@@ -31,15 +31,7 @@ public class VentanaPrincipalController implements Initializable {
 
     private void cargarRegistro(String direccionFXML, String tituloPestania) {
 
-        boolean yaAbierto = false;
-        for (Tab ta : this.tabPane.getTabs()) {
-            if (ta.getText().equals(tituloPestania)) {
-                this.tabPane.getSelectionModel().select(ta);
-                yaAbierto = true;
-                break;
-            }
-        }
-        if (!yaAbierto) {
+  
 
             try {
                 FXMLLoader loader = new FXMLLoader();
@@ -56,7 +48,7 @@ public class VentanaPrincipalController implements Initializable {
                 errDlg.setContentText(ex.getMessage());
                 errDlg.showAndWait();
             }
-        }
+        
     }
 
     @FXML

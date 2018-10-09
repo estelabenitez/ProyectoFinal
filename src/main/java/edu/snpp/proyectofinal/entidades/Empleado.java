@@ -29,6 +29,10 @@ import javax.persistence.Table;
     @NamedQuery(name = "Empleado.findAll", query = "SELECT e FROM Empleado e")})
 public class Empleado implements Serializable {
 
+    @JoinColumn(name = "cargo_idcargo", referencedColumnName = "idcargo")
+    @ManyToOne(optional = false)
+    private Cargo cargoIdcargo;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -154,6 +158,14 @@ public class Empleado implements Serializable {
     @Override
     public String toString() {
         return "edu.snpp.proyectofinal.entidades.Empleado[ idempleado=" + idempleado + " ]";
+    }
+
+    public Cargo getCargoIdcargo() {
+        return cargoIdcargo;
+    }
+
+    public void setCargoIdcargo(Cargo cargoIdcargo) {
+        this.cargoIdcargo = cargoIdcargo;
     }
     
 }

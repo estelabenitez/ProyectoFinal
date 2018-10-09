@@ -32,6 +32,10 @@ import javax.persistence.TemporalType;
     @NamedQuery(name = "MovimientoCaja.findAll", query = "SELECT m FROM MovimientoCaja m")})
 public class MovimientoCaja implements Serializable {
 
+    @JoinColumn(name = "empleado_idempleado", referencedColumnName = "idempleado")
+    @ManyToOne(optional = false)
+    private Empleado empleadoIdempleado;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -148,6 +152,14 @@ public class MovimientoCaja implements Serializable {
     @Override
     public String toString() {
         return "edu.snpp.proyectofinal.entidades.MovimientoCaja[ idcaja=" + idcaja + " ]";
+    }
+
+    public Empleado getEmpleadoIdempleado() {
+        return empleadoIdempleado;
+    }
+
+    public void setEmpleadoIdempleado(Empleado empleadoIdempleado) {
+        this.empleadoIdempleado = empleadoIdempleado;
     }
     
 }

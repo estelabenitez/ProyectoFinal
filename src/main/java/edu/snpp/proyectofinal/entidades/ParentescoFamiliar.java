@@ -26,6 +26,9 @@ import javax.persistence.Table;
     @NamedQuery(name = "ParentescoFamiliar.findAll", query = "SELECT p FROM ParentescoFamiliar p")})
 public class ParentescoFamiliar implements Serializable {
 
+    @Column(name = "descripcion")
+    private String descripcion;
+
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
@@ -102,6 +105,14 @@ public class ParentescoFamiliar implements Serializable {
     @Override
     public String toString() {
         return "edu.snpp.proyectofinal.entidades.ParentescoFamiliar[ idparentescoFamiliar=" + idparentescoFamiliar + " ]";
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     
 }

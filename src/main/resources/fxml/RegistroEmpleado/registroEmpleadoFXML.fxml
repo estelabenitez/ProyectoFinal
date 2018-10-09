@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="577.0" prefWidth="709.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="edu.snpp.proyectofinal.RegistroEmpleado.RegistroDeEmpleadoFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="577.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.snpp.proyectofinal.RegistroEmpleado.RegistroDeEmpleadoFXMLController">
    <children>
       <AnchorPane id="AnchorPane" layoutX="28.0" layoutY="7.0" prefHeight="624.0" prefWidth="664.0">
          <children>
@@ -32,12 +31,12 @@
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="direcAlum" labelFloat="true" layoutX="78.0" layoutY="312.0" prefHeight="28.0" prefWidth="219.0" promptText="Dirección:">
+            <JFXTextField fx:id="direcAlum" labelFloat="true" layoutX="78.0" layoutY="312.0" prefHeight="28.0" prefWidth="244.0" promptText="Dirección:">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="ciAlum" labelFloat="true" layoutX="78.0" layoutY="398.0" prefHeight="28.0" prefWidth="167.0" promptText="Cédula de Identidad:">
+            <JFXTextField fx:id="ciAlum" labelFloat="true" layoutX="78.0" layoutY="388.0" prefHeight="28.0" prefWidth="167.0" promptText="Cédula de Identidad:">
                <font>
                   <Font size="14.0" />
                </font>
@@ -48,7 +47,7 @@
                </font>
             </JFXButton>
             <JFXComboBox fx:id="cargo" labelFloat="true" layoutX="368.0" layoutY="175.0" prefHeight="26.0" prefWidth="167.0" promptText="Cargo" />
-            <JFXTextField layoutX="374.0" layoutY="399.0" prefHeight="26.0" prefWidth="175.0" promptText="Teléfono" />
+            <JFXTextField layoutX="81.0" layoutY="460.0" prefHeight="26.0" prefWidth="185.0" promptText="Teléfono" />
          </children>
       </AnchorPane>
    </children>
