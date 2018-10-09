@@ -24,17 +24,13 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author fredybogado
+ * @author estela
  */
 @Entity
 @Table(name = "movimiento_caja")
 @NamedQueries({
     @NamedQuery(name = "MovimientoCaja.findAll", query = "SELECT m FROM MovimientoCaja m")})
 public class MovimientoCaja implements Serializable {
-
-    @JoinColumn(name = "empleado_idempleado", referencedColumnName = "idempleado")
-    @ManyToOne(optional = false)
-    private Empleado empleadoIdempleado;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -52,9 +48,9 @@ public class MovimientoCaja implements Serializable {
     private Integer totalEntrada;
     @Column(name = "total_salida")
     private Integer totalSalida;
-    @JoinColumn(name = "empleado", referencedColumnName = "idempleado")
+    @JoinColumn(name = "empleado_idempleado", referencedColumnName = "idempleado")
     @ManyToOne(optional = false)
-    private Empleado empleado;
+    private Empleado empleadoIdempleado;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "caja")
     private List<DetalleCaja> detalleCajaList;
 
@@ -113,12 +109,12 @@ public class MovimientoCaja implements Serializable {
         this.totalSalida = totalSalida;
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
+    public Empleado getEmpleadoIdempleado() {
+        return empleadoIdempleado;
     }
 
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
+    public void setEmpleadoIdempleado(Empleado empleadoIdempleado) {
+        this.empleadoIdempleado = empleadoIdempleado;
     }
 
     public List<DetalleCaja> getDetalleCajaList() {
@@ -152,14 +148,6 @@ public class MovimientoCaja implements Serializable {
     @Override
     public String toString() {
         return "edu.snpp.proyectofinal.entidades.MovimientoCaja[ idcaja=" + idcaja + " ]";
-    }
-
-    public Empleado getEmpleadoIdempleado() {
-        return empleadoIdempleado;
-    }
-
-    public void setEmpleadoIdempleado(Empleado empleadoIdempleado) {
-        this.empleadoIdempleado = empleadoIdempleado;
     }
     
 }

@@ -18,7 +18,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author fredybogado
+ * @author estela
  */
 @Entity
 @Table(name = "parentesco_familiar")
@@ -26,16 +26,13 @@ import javax.persistence.Table;
     @NamedQuery(name = "ParentescoFamiliar.findAll", query = "SELECT p FROM ParentescoFamiliar p")})
 public class ParentescoFamiliar implements Serializable {
 
-    @Column(name = "descripcion")
-    private String descripcion;
-
     private static final long serialVersionUID = 1L;
     @Id
     @Basic(optional = false)
     @Column(name = "idparentesco_familiar")
     private Integer idparentescoFamiliar;
-    @Column(name = "categoria")
-    private String categoria;
+    @Column(name = "descripcion")
+    private String descripcion;
     @JoinColumn(name = "alumno", referencedColumnName = "idalumno")
     @ManyToOne(optional = false)
     private Alumno alumno;
@@ -58,12 +55,12 @@ public class ParentescoFamiliar implements Serializable {
         this.idparentescoFamiliar = idparentescoFamiliar;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Alumno getAlumno() {
@@ -105,14 +102,6 @@ public class ParentescoFamiliar implements Serializable {
     @Override
     public String toString() {
         return "edu.snpp.proyectofinal.entidades.ParentescoFamiliar[ idparentescoFamiliar=" + idparentescoFamiliar + " ]";
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
     
 }

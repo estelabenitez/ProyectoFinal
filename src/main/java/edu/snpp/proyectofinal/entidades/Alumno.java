@@ -25,19 +25,13 @@ import javax.persistence.TemporalType;
 
 /**
  *
- * @author fredybogado
+ * @author estela
  */
 @Entity
 @Table(name = "alumno")
 @NamedQueries({
     @NamedQuery(name = "Alumno.findAll", query = "SELECT a FROM Alumno a")})
 public class Alumno implements Serializable {
-
-    @JoinTable(name = "alumno_detalle_caja", joinColumns = {
-        @JoinColumn(name = "alumno", referencedColumnName = "idalumno")}, inverseJoinColumns = {
-        @JoinColumn(name = "detalle_caja", referencedColumnName = "iddetalle_caja")})
-    @ManyToMany
-    private List<DetalleCaja> detalleCajaList;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -57,6 +51,11 @@ public class Alumno implements Serializable {
     private Date fechaNac;
     @Column(name = "monto_aporte")
     private Integer montoAporte;
+    @JoinTable(name = "alumno_detalle_caja", joinColumns = {
+        @JoinColumn(name = "idalumno", referencedColumnName = "idalumno")}, inverseJoinColumns = {
+        @JoinColumn(name = "detalle_caja", referencedColumnName = "iddetalle_caja")})
+    @ManyToMany
+    private List<DetalleCaja> detalleCajaList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumno")
     private List<Inscripcion> inscripcionList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumno")
@@ -127,6 +126,14 @@ public class Alumno implements Serializable {
         this.montoAporte = montoAporte;
     }
 
+    public List<DetalleCaja> getDetalleCajaList() {
+        return detalleCajaList;
+    }
+
+    public void setDetalleCajaList(List<DetalleCaja> detalleCajaList) {
+        this.detalleCajaList = detalleCajaList;
+    }
+
     public List<Inscripcion> getInscripcionList() {
         return inscripcionList;
     }
@@ -174,14 +181,6 @@ public class Alumno implements Serializable {
     @Override
     public String toString() {
         return "edu.snpp.proyectofinal.entidades.Alumno[ idalumno=" + idalumno + " ]";
-    }
-
-    public List<DetalleCaja> getDetalleCajaList() {
-        return detalleCajaList;
-    }
-
-    public void setDetalleCajaList(List<DetalleCaja> detalleCajaList) {
-        this.detalleCajaList = detalleCajaList;
     }
     
 }

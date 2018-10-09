@@ -13,7 +13,7 @@ public class ParentescoListCell extends ListCell <ParentescoFamiliar>{
     protected void updateItem(ParentescoFamiliar item, boolean empty){
         if(!empty)
         {
-            this.setText(item.getCategoria());
+            this.setText(item.getDescripcion());
             
         }
         else

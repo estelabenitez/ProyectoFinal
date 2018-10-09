@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author fredybogado
+ * @author estela
  */
 @Entity
 @Table(name = "cargo")
@@ -34,7 +34,7 @@ public class Cargo implements Serializable {
     private Integer idcargo;
     @Column(name = "nombre")
     private String nombre;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cargo")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "cargoIdcargo")
     private List<Empleado> empleadoList;
 
     public Cargo() {

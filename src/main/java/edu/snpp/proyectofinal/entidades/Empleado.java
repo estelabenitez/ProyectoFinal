@@ -21,17 +21,13 @@ import javax.persistence.Table;
 
 /**
  *
- * @author fredybogado
+ * @author estela
  */
 @Entity
 @Table(name = "empleado")
 @NamedQueries({
     @NamedQuery(name = "Empleado.findAll", query = "SELECT e FROM Empleado e")})
 public class Empleado implements Serializable {
-
-    @JoinColumn(name = "cargo_idcargo", referencedColumnName = "idcargo")
-    @ManyToOne(optional = false)
-    private Cargo cargoIdcargo;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -50,11 +46,11 @@ public class Empleado implements Serializable {
     private String telefono;
     @Column(name = "contrasena")
     private String contrasena;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "empleado")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "empleadoIdempleado")
     private List<MovimientoCaja> movimientoCajaList;
-    @JoinColumn(name = "cargo", referencedColumnName = "idcargo")
+    @JoinColumn(name = "cargo_idcargo", referencedColumnName = "idcargo")
     @ManyToOne(optional = false)
-    private Cargo cargo;
+    private Cargo cargoIdcargo;
 
     public Empleado() {
     }
@@ -127,12 +123,12 @@ public class Empleado implements Serializable {
         this.movimientoCajaList = movimientoCajaList;
     }
 
-    public Cargo getCargo() {
-        return cargo;
+    public Cargo getCargoIdcargo() {
+        return cargoIdcargo;
     }
 
-    public void setCargo(Cargo cargo) {
-        this.cargo = cargo;
+    public void setCargoIdcargo(Cargo cargoIdcargo) {
+        this.cargoIdcargo = cargoIdcargo;
     }
 
     @Override
@@ -158,14 +154,6 @@ public class Empleado implements Serializable {
     @Override
     public String toString() {
         return "edu.snpp.proyectofinal.entidades.Empleado[ idempleado=" + idempleado + " ]";
-    }
-
-    public Cargo getCargoIdcargo() {
-        return cargoIdcargo;
-    }
-
-    public void setCargoIdcargo(Cargo cargoIdcargo) {
-        this.cargoIdcargo = cargoIdcargo;
     }
     
 }

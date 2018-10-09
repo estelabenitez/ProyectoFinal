@@ -19,7 +19,7 @@ import javax.persistence.Table;
 
 /**
  *
- * @author fredybogado
+ * @author estela
  */
 @Entity
 @Table(name = "grado")
