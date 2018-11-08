@@ -6,14 +6,20 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.snpp.proyectofinal.VentanaPrincipalController">
    <children>
-      <MenuBar layoutX="-5.0" layoutY="-4.0" prefHeight="40.0" prefWidth="775.0">
+      <MenuBar layoutX="-5.0" prefHeight="523.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="Archivo">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#OnActionRegistro" text="Registro" />
+              <MenuItem mnemonicParsing="false" onAction="#OnActionRegistro" text="Registro de Alumno" />
+                  <MenuItem mnemonicParsing="false" onAction="#OnActionInscripcion" text="Registro de Incripcion" />
+                  <MenuItem mnemonicParsing="false" onAction="#OnActionRegistroEncargado" text="Registro de Encargado" />
+                  <MenuItem mnemonicParsing="false" onAction="#OnActionListaAlumno" text="Listas de Alumnos" />
+                  <MenuItem mnemonicParsing="false" onAction="#OnActionListaEncargado" text="Lista de Encargado" />
+                  <MenuItem mnemonicParsing="false" onAction="#OnActionListaParentesco" text="Lista de Parentesco" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Editar">
@@ -28,10 +34,13 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TabPane fx:id="tabPane" layoutX="-3.0" layoutY="36.0" prefHeight="487.0" prefWidth="775.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Registro" />
-        </tabs>
-      </TabPane>
+      <TabPane fx:id="tabPane" layoutX="-3.0" layoutY="25.0" prefHeight="498.0" prefWidth="768.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+         <tabs>
+            <Tab text="inicio">
+               <content>
+                  <StackPane prefHeight="150.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+         </tabs></TabPane>
    </children>
 </AnchorPane>

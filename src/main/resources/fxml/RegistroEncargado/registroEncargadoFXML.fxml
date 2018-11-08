@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="619.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.snpp.proyectofinal.RegistroEncargado.RegistroEncargadoFXMLController">
+   <children>
+      <Label layoutX="183.0" layoutY="44.0" text="REGISTRO DE ENCARGADOS" textFill="#205183">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="120.0" prefHeight="26.0" prefWidth="213.0" text="Datos Personales Encargado">
+         <font>
+            <Font name="Noto Sans CJK TC Bold" size="15.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="nomEnca" labelFloat="true" layoutX="92.0" layoutY="214.0" prefHeight="28.0" prefWidth="219.0" promptText="Nombre:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="apeEnca" labelFloat="true" layoutX="92.0" layoutY="286.0" prefHeight="28.0" prefWidth="219.0" promptText="Apellido:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="direcEnca" labelFloat="true" layoutX="92.0" layoutY="342.0" prefHeight="28.0" prefWidth="219.0" promptText="Dirección:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="ciEnca" labelFloat="true" layoutX="92.0" layoutY="402.0" prefHeight="28.0" prefWidth="219.0" promptText="Cédula de Identidad:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="telfEnca" labelFloat="true" layoutX="92.0" layoutY="466.0" prefHeight="28.0" prefWidth="219.0" promptText="Telefono:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="Agregar" layoutX="450.0" layoutY="466.0" onAction="#OnActionAgregar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" textFill="#00040d">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="484.0" layoutY="146.0" prefHeight="26.0" prefWidth="24.0" text="ID :" />
+      <TextField fx:id="txfid" editable="false" layoutX="514.0" layoutY="146.0" prefHeight="26.0" prefWidth="64.0" />
+   </children>
+</AnchorPane>

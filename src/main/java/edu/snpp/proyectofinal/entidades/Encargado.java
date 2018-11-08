@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package edu.snpp.proyectofinal.entidades;
 
 import java.io.Serializable;
@@ -11,6 +7,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -29,6 +27,7 @@ public class Encargado implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idencargado")
     private Integer idencargado;
@@ -39,11 +38,11 @@ public class Encargado implements Serializable {
     @Column(name = "direccion")
     private String direccion;
     @Column(name = "ci")
-    private String ci;
+    private Integer ci;
     @Column(name = "telefono")
     private String telefono;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "encargado")
-    private List<ParentescoFamiliar> parentescoFamiliarList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "encargado1")
+    private List<DetalleEncargado> detalleEncargadoList;
 
     public Encargado() {
     }
@@ -84,11 +83,11 @@ public class Encargado implements Serializable {
         this.direccion = direccion;
     }
 
-    public String getCi() {
+    public Integer getCi() {
         return ci;
     }
 
-    public void setCi(String ci) {
+    public void setCi(Integer ci) {
         this.ci = ci;
     }
 
@@ -100,12 +99,12 @@ public class Encargado implements Serializable {
         this.telefono = telefono;
     }
 
-    public List<ParentescoFamiliar> getParentescoFamiliarList() {
-        return parentescoFamiliarList;
+    public List<DetalleEncargado> getDetalleEncargadoList() {
+        return detalleEncargadoList;
     }
 
-    public void setParentescoFamiliarList(List<ParentescoFamiliar> parentescoFamiliarList) {
-        this.parentescoFamiliarList = parentescoFamiliarList;
+    public void setDetalleEncargadoList(List<DetalleEncargado> detalleEncargadoList) {
+        this.detalleEncargadoList = detalleEncargadoList;
     }
 
     @Override
@@ -130,7 +129,8 @@ public class Encargado implements Serializable {
 
     @Override
     public String toString() {
-        return "edu.snpp.proyectofinal.entidades.Encargado[ idencargado=" + idencargado + " ]";
+        //return "edu.snpp.proyectofinal.entidades.Encargado[ idencargado=" + idencargado + " ]";
+        return this.nombre+" "+this.apellido;
     }
     
 }

@@ -10,6 +10,8 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -31,17 +33,18 @@ public class MoviemientoAporte implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
-    @Column(name = "idmoviemiento_aporte")
-    private Integer idmoviemientoAporte;
-    @Column(name = "fecha_pago")
+    @Column(name = "idmoviemientoaporte")
+    private Integer idmoviemientoaporte;
+    @Column(name = "fechapago")
     @Temporal(TemporalType.DATE)
-    private Date fechaPago;
+    private Date fechapago;
     @Column(name = "monto")
     private Integer monto;
-    @Column(name = "fecha_vencimiento")
+    @Column(name = "fechavencimiento")
     @Temporal(TemporalType.DATE)
-    private Date fechaVencimiento;
+    private Date fechavencimiento;
     @Column(name = "pendiente")
     private Boolean pendiente;
     @Column(name = "mes")
@@ -53,24 +56,24 @@ public class MoviemientoAporte implements Serializable {
     public MoviemientoAporte() {
     }
 
-    public MoviemientoAporte(Integer idmoviemientoAporte) {
-        this.idmoviemientoAporte = idmoviemientoAporte;
+    public MoviemientoAporte(Integer idmoviemientoaporte) {
+        this.idmoviemientoaporte = idmoviemientoaporte;
     }
 
-    public Integer getIdmoviemientoAporte() {
-        return idmoviemientoAporte;
+    public Integer getIdmoviemientoaporte() {
+        return idmoviemientoaporte;
     }
 
-    public void setIdmoviemientoAporte(Integer idmoviemientoAporte) {
-        this.idmoviemientoAporte = idmoviemientoAporte;
+    public void setIdmoviemientoaporte(Integer idmoviemientoaporte) {
+        this.idmoviemientoaporte = idmoviemientoaporte;
     }
 
-    public Date getFechaPago() {
-        return fechaPago;
+    public Date getFechapago() {
+        return fechapago;
     }
 
-    public void setFechaPago(Date fechaPago) {
-        this.fechaPago = fechaPago;
+    public void setFechapago(Date fechapago) {
+        this.fechapago = fechapago;
     }
 
     public Integer getMonto() {
@@ -81,12 +84,12 @@ public class MoviemientoAporte implements Serializable {
         this.monto = monto;
     }
 
-    public Date getFechaVencimiento() {
-        return fechaVencimiento;
+    public Date getFechavencimiento() {
+        return fechavencimiento;
     }
 
-    public void setFechaVencimiento(Date fechaVencimiento) {
-        this.fechaVencimiento = fechaVencimiento;
+    public void setFechavencimiento(Date fechavencimiento) {
+        this.fechavencimiento = fechavencimiento;
     }
 
     public Boolean getPendiente() {
@@ -116,7 +119,7 @@ public class MoviemientoAporte implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (idmoviemientoAporte != null ? idmoviemientoAporte.hashCode() : 0);
+        hash += (idmoviemientoaporte != null ? idmoviemientoaporte.hashCode() : 0);
         return hash;
     }
 
@@ -127,7 +130,7 @@ public class MoviemientoAporte implements Serializable {
             return false;
         }
         MoviemientoAporte other = (MoviemientoAporte) object;
-        if ((this.idmoviemientoAporte == null && other.idmoviemientoAporte != null) || (this.idmoviemientoAporte != null && !this.idmoviemientoAporte.equals(other.idmoviemientoAporte))) {
+        if ((this.idmoviemientoaporte == null && other.idmoviemientoaporte != null) || (this.idmoviemientoaporte != null && !this.idmoviemientoaporte.equals(other.idmoviemientoaporte))) {
             return false;
         }
         return true;
@@ -135,7 +138,7 @@ public class MoviemientoAporte implements Serializable {
 
     @Override
     public String toString() {
-        return "edu.snpp.proyectofinal.entidades.MoviemientoAporte[ idmoviemientoAporte=" + idmoviemientoAporte + " ]";
+        return "edu.snpp.proyectofinal.entidades.MoviemientoAporte[ idmoviemientoaporte=" + idmoviemientoaporte + " ]";
     }
     
 }

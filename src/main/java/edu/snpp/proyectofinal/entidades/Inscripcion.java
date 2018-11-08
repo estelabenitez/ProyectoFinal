@@ -10,6 +10,8 @@ import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -31,12 +33,16 @@ public class Inscripcion implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idinscripcion")
     private Integer idinscripcion;
     @Column(name = "fecha")
     @Temporal(TemporalType.DATE)
     private Date fecha;
+    @Column(name = "anhoelectivo")
+    @Temporal(TemporalType.DATE)
+    private Date anhoelectivo;
     @JoinColumn(name = "alumno", referencedColumnName = "idalumno")
     @ManyToOne(optional = false)
     private Alumno alumno;
@@ -65,6 +71,14 @@ public class Inscripcion implements Serializable {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public Date getAnhoelectivo() {
+        return anhoelectivo;
+    }
+
+    public void setAnhoelectivo(Date anhoelectivo) {
+        this.anhoelectivo = anhoelectivo;
     }
 
     public Alumno getAlumno() {

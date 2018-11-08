@@ -11,6 +11,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -31,6 +33,7 @@ public class Empleado implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idempleado")
     private Integer idempleado;
@@ -41,16 +44,16 @@ public class Empleado implements Serializable {
     @Column(name = "direccion")
     private String direccion;
     @Column(name = "ci")
-    private String ci;
+    private Integer ci;
     @Column(name = "telefono")
     private String telefono;
     @Column(name = "contrasena")
     private String contrasena;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "empleadoIdempleado")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "empleado")
     private List<MovimientoCaja> movimientoCajaList;
-    @JoinColumn(name = "cargo_idcargo", referencedColumnName = "idcargo")
+    @JoinColumn(name = "cargo", referencedColumnName = "idcargo")
     @ManyToOne(optional = false)
-    private Cargo cargoIdcargo;
+    private Cargo cargo;
 
     public Empleado() {
     }
@@ -91,11 +94,11 @@ public class Empleado implements Serializable {
         this.direccion = direccion;
     }
 
-    public String getCi() {
+    public Integer getCi() {
         return ci;
     }
 
-    public void setCi(String ci) {
+    public void setCi(Integer ci) {
         this.ci = ci;
     }
 
@@ -123,12 +126,12 @@ public class Empleado implements Serializable {
         this.movimientoCajaList = movimientoCajaList;
     }
 
-    public Cargo getCargoIdcargo() {
-        return cargoIdcargo;
+    public Cargo getCargo() {
+        return cargo;
     }
 
-    public void setCargoIdcargo(Cargo cargoIdcargo) {
-        this.cargoIdcargo = cargoIdcargo;
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
     }
 
     @Override

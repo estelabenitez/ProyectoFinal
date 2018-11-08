@@ -21,7 +21,7 @@ public class VentanaPrincipalController implements Initializable {
 
     private static final Logger LOG = Logger.getLogger(VentanaPrincipalController.class.getName());
     @FXML
-    private TabPane tabPane;
+    public TabPane tabPane;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -29,17 +29,16 @@ public class VentanaPrincipalController implements Initializable {
         EntityManager em = emf.createEntityManager();
     }
 
-    private void cargarRegistro(String direccionFXML, String tituloPestania) {
+    private void cargar(String direccionFXML, String tituloPestania) {
 
-  
-
-            try {
+          try {
                 FXMLLoader loader = new FXMLLoader();
-                AnchorPane root = FXMLLoader.load(getClass().getResource(direccionFXML));
+                AnchorPane root = loader.load(getClass().getResourceAsStream(direccionFXML));
                 Tab t = new Tab();
                 t.setText(tituloPestania);
                 t.setContent(root);
                 this.tabPane.getTabs().add(t);
+                this.tabPane.getSelectionModel().select(t);
             } catch (IOException ex) {
                 LOG.log(Level.SEVERE, "Error al cargar registro", ex);
                 Alert errDlg = new Alert(Alert.AlertType.ERROR);
@@ -53,7 +52,35 @@ public class VentanaPrincipalController implements Initializable {
 
     @FXML
     private void OnActionRegistro(ActionEvent event) {
-        this.cargarRegistro("/fxml/RegistroAlumno/registroAlumnoFXML.fxml", "Registro");
+        this.cargar("/fxml/RegistroAlumno/registroAlumnoFXML.fxml", "Registro Alumno");
     }
+
+    @FXML
+    private void OnActionInscripcion(ActionEvent event) {
+        
+        this.cargar("/fxml/inscripcion/cargarInscripcionFXML.fxml", "Registro Inscripciones");
+    }
+
+    @FXML
+    private void OnActionRegistroEncargado(ActionEvent event) {
+        this.cargar("/fxml/RegistroEncargado/registroEncargadoFXML.fxml", "Registro Encargado");
+    }
+
+    @FXML
+    private void OnActionListaAlumno(ActionEvent event) {
+        this.cargar("/fxml/RegistroAlumno/tablaAlumnoFXML.fxml", "Lista de Alumnos");
+    }
+
+    @FXML
+    private void OnActionListaEncargado(ActionEvent event) {
+        this.cargar("/fxml/RegistroEncargado/tablaEncargadoFXML.fxml", "Lista de Encargado");
+    }
+
+    @FXML
+    private void OnActionListaParentesco(ActionEvent event) {
+         this.cargar("/fxml/listaParentesco/listaParentescoFXML.fxml", "Lista de Parentesco");
+    }
+    
+    
 
 }

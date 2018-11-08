@@ -12,6 +12,8 @@ import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -35,6 +37,7 @@ public class Alumno implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Basic(optional = false)
     @Column(name = "idalumno")
     private Integer idalumno;
@@ -45,23 +48,23 @@ public class Alumno implements Serializable {
     @Column(name = "direccion")
     private String direccion;
     @Column(name = "ci")
-    private String ci;
-    @Column(name = "fecha_nac")
+    private Integer ci;
+    @Column(name = "fechanac")
     @Temporal(TemporalType.DATE)
-    private Date fechaNac;
-    @Column(name = "monto_aporte")
-    private Integer montoAporte;
+    private Date fechanac;
+    @Column(name = "montoaporte")
+    private Integer montoaporte;
     @JoinTable(name = "alumno_detalle_caja", joinColumns = {
         @JoinColumn(name = "idalumno", referencedColumnName = "idalumno")}, inverseJoinColumns = {
-        @JoinColumn(name = "detalle_caja", referencedColumnName = "iddetalle_caja")})
+        @JoinColumn(name = "detallecaja", referencedColumnName = "iddetallecaja")})
     @ManyToMany
     private List<DetalleCaja> detalleCajaList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumno")
     private List<Inscripcion> inscripcionList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumno")
-    private List<ParentescoFamiliar> parentescoFamiliarList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumno")
     private List<MoviemientoAporte> moviemientoAporteList;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumno1")
+    private List<DetalleEncargado> detalleEncargadoList;
 
     public Alumno() {
     }
@@ -102,28 +105,28 @@ public class Alumno implements Serializable {
         this.direccion = direccion;
     }
 
-    public String getCi() {
+    public Integer getCi() {
         return ci;
     }
 
-    public void setCi(String ci) {
+    public void setCi(Integer ci) {
         this.ci = ci;
     }
 
-    public Date getFechaNac() {
-        return fechaNac;
+    public Date getFechanac() {
+        return fechanac;
     }
 
-    public void setFechaNac(Date fechaNac) {
-        this.fechaNac = fechaNac;
+    public void setFechanac(Date fechanac) {
+        this.fechanac = fechanac;
     }
 
-    public Integer getMontoAporte() {
-        return montoAporte;
+    public Integer getMontoaporte() {
+        return montoaporte;
     }
 
-    public void setMontoAporte(Integer montoAporte) {
-        this.montoAporte = montoAporte;
+    public void setMontoaporte(Integer montoaporte) {
+        this.montoaporte = montoaporte;
     }
 
     public List<DetalleCaja> getDetalleCajaList() {
@@ -142,20 +145,20 @@ public class Alumno implements Serializable {
         this.inscripcionList = inscripcionList;
     }
 
-    public List<ParentescoFamiliar> getParentescoFamiliarList() {
-        return parentescoFamiliarList;
-    }
-
-    public void setParentescoFamiliarList(List<ParentescoFamiliar> parentescoFamiliarList) {
-        this.parentescoFamiliarList = parentescoFamiliarList;
-    }
-
     public List<MoviemientoAporte> getMoviemientoAporteList() {
         return moviemientoAporteList;
     }
 
     public void setMoviemientoAporteList(List<MoviemientoAporte> moviemientoAporteList) {
         this.moviemientoAporteList = moviemientoAporteList;
+    }
+
+    public List<DetalleEncargado> getDetalleEncargadoList() {
+        return detalleEncargadoList;
+    }
+
+    public void setDetalleEncargadoList(List<DetalleEncargado> detalleEncargadoList) {
+        this.detalleEncargadoList = detalleEncargadoList;
     }
 
     @Override

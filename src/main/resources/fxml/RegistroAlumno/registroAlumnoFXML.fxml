@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
-<?import java.net.URL?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" prefHeight="609.0" prefWidth="672.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.snpp.proyectofinal.RegistroAlumno.RegistroAlumnoFXMLController">
-    <stylesheets>
-        <URL value="@registroalumnofxml.css" />
-    </stylesheets>
    <children>
-      <AnchorPane id="AnchorPane" layoutX="10.0" layoutY="10.0" prefHeight="624.0" prefWidth="640.0">
+      <AnchorPane id="AnchorPane" layoutX="-8.0" prefHeight="619.0" prefWidth="1253.0">
          <children>
-            <Label layoutX="173.0" layoutY="24.0" text="REGISTRO DE ALUMNOS" textFill="#205183">
+            <Label layoutX="173.0" layoutY="34.0" text="REGISTRO DE ALUMNOS" textFill="#205183">
                <font>
                   <Font size="26.0" />
                </font>
@@ -26,60 +22,35 @@
                   <Font name="Noto Sans CJK TC Bold" size="15.0" />
                </font>
             </Label>
-            <JFXTextField fx:id="nomAlum" labelFloat="true" layoutX="82.0" layoutY="167.0" prefHeight="28.0" prefWidth="219.0" promptText="Nombre:">
+            <JFXTextField fx:id="nomAlum" labelFloat="true" layoutX="82.0" layoutY="204.0" prefHeight="28.0" prefWidth="219.0" promptText="Nombre:">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="apeAlum" labelFloat="true" layoutX="82.0" layoutY="214.0" prefHeight="28.0" prefWidth="219.0" promptText="Apellido:">
+            <JFXTextField fx:id="apeAlum" labelFloat="true" layoutX="82.0" layoutY="276.0" prefHeight="28.0" prefWidth="219.0" promptText="Apellido:">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="direcAlum" labelFloat="true" layoutX="82.0" layoutY="259.0" prefHeight="28.0" prefWidth="219.0" promptText="Dirección:">
+            <JFXTextField fx:id="direcAlum" labelFloat="true" layoutX="82.0" layoutY="332.0" prefHeight="28.0" prefWidth="219.0" promptText="Dirección:">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="ciAlum" labelFloat="true" layoutX="82.0" layoutY="305.0" prefHeight="28.0" prefWidth="167.0" promptText="Cédula de Identidad:">
+            <JFXTextField fx:id="ciAlum" labelFloat="true" layoutX="82.0" layoutY="392.0" prefHeight="28.0" prefWidth="219.0" promptText="Cédula de Identidad:">
                <font>
                   <Font size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="aporteAlum" labelFloat="true" layoutX="386.0" layoutY="169.0" promptText="Aporte:" />
-            <Label layoutX="49.0" layoutY="358.0" prefHeight="26.0" prefWidth="219.0" text="Datos Personales Encargado:">
-               <font>
-                  <Font name="Noto Sans CJK TC Bold" size="15.0" />
-               </font>
-            </Label>
-            <JFXTextField fx:id="nomEnca" labelFloat="true" layoutX="81.0" layoutY="394.0" prefHeight="28.0" prefWidth="219.0" promptText="Nombre:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField fx:id="apeEnca" labelFloat="true" layoutX="81.0" layoutY="440.0" prefHeight="28.0" prefWidth="219.0" promptText="Apellido:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField fx:id="direcEnca" labelFloat="true" layoutX="82.0" layoutY="490.0" prefHeight="28.0" prefWidth="219.0" promptText="Dirección:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXTextField fx:id="telfEnca" labelFloat="true" layoutX="81.0" layoutY="534.0" prefHeight="26.0" prefWidth="219.0" promptText="Teléfono:" />
-            <JFXButton fx:id="Agregar" layoutX="479.0" layoutY="560.0" onAction="#OnActionAgregar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" textFill="#00040d">
+            <JFXTextField fx:id="aporteAlum" labelFloat="true" layoutX="396.0" layoutY="205.0" promptText="Aporte:" />
+            <JFXButton fx:id="Agregar" layoutX="499.0" layoutY="464.0" onAction="#OnActionAgregar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" textFill="#00040d">
                <font>
                   <Font size="16.0" />
                </font>
             </JFXButton>
-            <JFXTextField fx:id="ciEnca" labelFloat="true" layoutX="386.0" layoutY="394.0" prefHeight="28.0" prefWidth="167.0" promptText="Cédula de Identidad:">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </JFXTextField>
-            <JFXComboBox fx:id="parenEnca" labelFloat="true" layoutX="386.0" layoutY="441.0" prefHeight="26.0" prefWidth="167.0" promptText="Parentesco Familiar" />
-            <JFXDatePicker fx:id="fechanac" layoutX="374.0" layoutY="299.0" promptText="Fecha Nacimiento" />
+            <JFXDatePicker fx:id="fechanac" layoutX="395.0" layoutY="277.0" promptText="Fecha Nacimiento" />
+            <Label layoutX="474.0" layoutY="136.0" prefHeight="26.0" prefWidth="24.0" text="ID :" />
+            <TextField fx:id="txfid" editable="false" layoutX="504.0" layoutY="136.0" prefHeight="26.0" prefWidth="64.0" />
          </children>
       </AnchorPane>
    </children>
