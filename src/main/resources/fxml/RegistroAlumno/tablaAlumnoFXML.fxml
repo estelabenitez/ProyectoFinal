@@ -16,12 +16,12 @@
          </font>
       </Label>
       <JFXButton layoutX="76.0" layoutY="79.0" onAction="#onActionBuscar" style="-fx-background-color: lightblue; -fx-border-radius: ;" text="Buscar" />
-      <JFXTextField fx:id="txf" layoutX="150.0" layoutY="79.0" prefHeight="26.0" prefWidth="207.0" />
+      <JFXTextField fx:id="txf" layoutX="150.0" layoutY="79.0" onKeyPressed="#OnKeyBUSCAR" prefHeight="26.0" prefWidth="207.0" />
       <JFXButton layoutX="128.0" layoutY="534.0" onAction="#onActionAgregar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" />
       <JFXButton layoutX="493.0" layoutY="534.0" onAction="#onActionModificar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Modificar" />
       <JFXButton layoutX="649.0" layoutY="534.0" onAction="#onActionEliminar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Eliminar" />
       <JFXButton layoutX="297.0" layoutY="534.0" onAction="#onActionActualizar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Actualizar" />
-      <TableView fx:id="lista" layoutX="43.0" layoutY="134.0" prefHeight="389.0" prefWidth="921.0">
+      <TableView fx:id="lista" layoutX="43.0" layoutY="134.0" prefHeight="389.0" prefWidth="908.0">
         <columns>
           <TableColumn fx:id="nomb" prefWidth="129.0" text="Nombre" />
           <TableColumn fx:id="ape" prefWidth="108.0" text="Apellido" />
@@ -29,7 +29,7 @@
             <TableColumn fx:id="ci" prefWidth="135.0" text="Cedula Identidad" />
             <TableColumn fx:id="fechanac" prefWidth="162.0" text="Fecha Nacimiento" />
             <TableColumn fx:id="aporte" prefWidth="138.0" text="Monto Aporte" />
-            <TableColumn fx:id="grado" prefWidth="129.0" text="Grado" />
+            <TableColumn fx:id="colactivo" prefWidth="116.0" text="Activo" />
         </columns>
       </TableView>
       <JFXButton layoutX="785.0" layoutY="534.0" onAction="#onActionAgregarParentesco" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar Parentesco" />

@@ -3,7 +3,6 @@ package edu.snpp.proyectofinal.RegistroAlumno;
 import com.jfoenix.controls.JFXTextField;
 import edu.snpp.proyectofinal.MainApp;
 import edu.snpp.proyectofinal.entidades.Alumno;
-import edu.snpp.proyectofinal.entidades.Grado;
 import edu.snpp.proyectofinal.listaParentesco.listaParentescoFXMLController;
 import java.io.IOException;
 import java.net.URL;
@@ -24,6 +23,7 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 
 import javax.persistence.EntityManager;
@@ -56,7 +56,7 @@ public class TablaAlumnoFXMLController implements Initializable {
     @FXML
     private TableColumn<Alumno, Integer> aporte;
     @FXML
-    private TableColumn<Alumno, Grado> grado;//preguntar como puedo hacer
+    private TableColumn<Alumno, Boolean > colactivo;
 
     /**
      * Initializes the controller class.
@@ -64,12 +64,18 @@ public class TablaAlumnoFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         cargaralumno();
-        nomb.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        nomb.setCellValueFactory(new PropertyValueFactory<>("nombre"));// el que esta en "" es como esta en la entidad alumno
         ape.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         ci.setCellValueFactory(new PropertyValueFactory<>("ci"));
         fechanac.setCellValueFactory(new PropertyValueFactory<>("fechanac"));
         direc.setCellValueFactory(new PropertyValueFactory<>("direccion"));
         aporte.setCellValueFactory(new PropertyValueFactory<>("montoaporte"));
+        
+        colactivo.setCellValueFactory(new PropertyValueFactory<>("activo"));
+        colactivo.setCellFactory((TableColumn<Alumno, Boolean> b) -> new activoAlumno());
+        
+        
+        
 
         //para que la fecha mierda salga bien
         this.fechanac.setCellFactory((TableColumn<Alumno, Date> a) -> {
@@ -111,10 +117,22 @@ public class TablaAlumnoFXMLController implements Initializable {
     
     @FXML
     private void onActionAgregarParentesco(ActionEvent event) {
-        this.cargarModulo("/fxml/listaParentesco/listaParentescoFXML.fxml", "Lista de Parentesco", 3);
-        cargaralumno();
+     
+        if(lista.getSelectionModel().isEmpty()){
+            
+         Alert e = new Alert(Alert.AlertType.INFORMATION);
+         e.setTitle("Parentesco");
+         e.setHeaderText("Seleccione un Alumno antes de escoger Parentesco");
+         e.showAndWait();
+         
 
-    }
+        }
+        else{
+            this.cargarModulo("/fxml/listaParentesco/listaParentescoFXML.fxml", "Lista de Parentesco", 3);
+        cargaralumno();
+        }
+  }
+    
     
     
 
@@ -186,9 +204,10 @@ public class TablaAlumnoFXMLController implements Initializable {
             t.setContent(root);
             MainApp.VENTANAPRINCIPAL.tabPane.getTabs().add(t);
             MainApp.VENTANAPRINCIPAL.tabPane.getSelectionModel().select(t);
-            System.out.println("Entro 4");
+           
         } catch (IOException ex) {
-            System.out.println("Entro 5");
+            
+            
             LOG.log(Level.SEVERE, "Error al cargar modulo", ex);
             Alert errDlg = new Alert(Alert.AlertType.ERROR);
             errDlg.setTitle("Error al cargar módulo");
@@ -199,5 +218,12 @@ public class TablaAlumnoFXMLController implements Initializable {
     }
     private static final Logger LOG = Logger.getLogger(TablaAlumnoFXMLController.class.getName());
 
+    @FXML
+    private void OnKeyBUSCAR(KeyEvent event) {
+        
+        buscar();
+    }
+
     
 }
+ 

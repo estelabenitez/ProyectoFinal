@@ -15,8 +15,8 @@ public class EncargadoTableCell extends TableCell<DetalleEncargado, Encargado> {
     protected void updateItem(Encargado item, boolean empty) {
         if (!empty && item != null) {
 
-            this.setText(item.getNombre());
-            this.setText(item.getApellido());
+            this.setText(item.getNombre()+" "+item.getApellido());
+            
             
         } else {
             

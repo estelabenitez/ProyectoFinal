@@ -49,6 +49,8 @@ public class Empleado implements Serializable {
     private String telefono;
     @Column(name = "contrasena")
     private String contrasena;
+    @Column(name = "activo")
+    private Boolean activo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "empleado")
     private List<MovimientoCaja> movimientoCajaList;
     @JoinColumn(name = "cargo", referencedColumnName = "idcargo")
@@ -116,6 +118,14 @@ public class Empleado implements Serializable {
 
     public void setContrasena(String contrasena) {
         this.contrasena = contrasena;
+    }
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
     public List<MovimientoCaja> getMovimientoCajaList() {

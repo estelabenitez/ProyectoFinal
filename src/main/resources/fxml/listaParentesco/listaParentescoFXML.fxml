@@ -26,7 +26,7 @@
          </columns>
       </TableView>
       <JFXButton layoutX="729.0" layoutY="548.0" onAction="#onActionActualizar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Actualizar" />
-      <JFXButton layoutX="729.0" layoutY="483.0" onAction="#onActionModificar" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Modificar" />
+      <JFXButton fx:id="modificar" layoutX="729.0" layoutY="483.0" onAction="#onActionModificar" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Modificar" />
       <JFXButton layoutX="729.0" layoutY="422.0" onAction="#onActionEliminar" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Eliminar" />
       <JFXComboBox fx:id="combparent" layoutX="836.0" layoutY="226.0" prefHeight="26.0" prefWidth="197.0" />
       <Label layoutX="729.0" layoutY="236.0" prefHeight="26.0" prefWidth="103.0" text="Parentesco:" />
@@ -35,6 +35,6 @@
             <Font size="26.0" />
          </font>
       </Label>
-      <JFXButton layoutX="729.0" layoutY="367.0" onAction="#onActionAgregar" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" />
+      <JFXButton fx:id="agregar" layoutX="729.0" layoutY="367.0" onAction="#onActionAgregar" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" />
    </children>
 </AnchorPane>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
@@ -51,6 +52,8 @@
             <JFXDatePicker fx:id="fechanac" layoutX="395.0" layoutY="277.0" promptText="Fecha Nacimiento" />
             <Label layoutX="474.0" layoutY="136.0" prefHeight="26.0" prefWidth="24.0" text="ID :" />
             <TextField fx:id="txfid" editable="false" layoutX="504.0" layoutY="136.0" prefHeight="26.0" prefWidth="64.0" />
+            <JFXComboBox fx:id="combactivo" layoutX="77.0" layoutY="497.0" prefHeight="32.0" prefWidth="168.0" />
+            <Label layoutX="77.0" layoutY="464.0" prefHeight="32.0" prefWidth="87.0" text="Activo:" />
          </children>
       </AnchorPane>
    </children>

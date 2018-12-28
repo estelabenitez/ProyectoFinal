@@ -15,9 +15,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -54,11 +51,8 @@ public class Alumno implements Serializable {
     private Date fechanac;
     @Column(name = "montoaporte")
     private Integer montoaporte;
-    @JoinTable(name = "alumno_detalle_caja", joinColumns = {
-        @JoinColumn(name = "idalumno", referencedColumnName = "idalumno")}, inverseJoinColumns = {
-        @JoinColumn(name = "detallecaja", referencedColumnName = "iddetallecaja")})
-    @ManyToMany
-    private List<DetalleCaja> detalleCajaList;
+    @Column(name = "activo")
+    private Boolean activo;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumno")
     private List<Inscripcion> inscripcionList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "alumno")
@@ -129,12 +123,12 @@ public class Alumno implements Serializable {
         this.montoaporte = montoaporte;
     }
 
-    public List<DetalleCaja> getDetalleCajaList() {
-        return detalleCajaList;
+    public Boolean getActivo() {
+        return activo;
     }
 
-    public void setDetalleCajaList(List<DetalleCaja> detalleCajaList) {
-        this.detalleCajaList = detalleCajaList;
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
     public List<Inscripcion> getInscripcionList() {

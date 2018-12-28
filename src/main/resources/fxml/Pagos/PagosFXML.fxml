@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="565.0" prefWidth="956.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.snpp.proyectofinal.Pagos.PagosFXMLController">
+   <children>
+      <Label layoutX="374.0" layoutY="44.0" prefHeight="39.0" prefWidth="336.0" text="Registro de Pagos" textAlignment="CENTER" textFill="#1b218a">
+         <font>
+            <Font name="KacstLetter" size="29.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="combconcep" layoutX="246.0" layoutY="189.0" prefHeight="26.0" prefWidth="211.0" />
+      <Label layoutX="246.0" layoutY="162.0" prefHeight="26.0" prefWidth="142.0" text="Concepto Gasto">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txfmonto" labelFloat="true" layoutX="246.0" layoutY="250.0" prefHeight="33.0" prefWidth="195.0" promptText="Monto:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="numfac" labelFloat="true" layoutX="246.0" layoutY="326.0" prefHeight="32.0" prefWidth="183.0" promptText="Nro.  de Documento:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="buttonpagar" layoutX="551.0" layoutY="404.0" onAction="#onActionPagar" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="PAGAR" />
+      <JFXTextField fx:id="txfdescrip" labelFloat="true" layoutX="527.0" layoutY="259.0" prefHeight="33.0" prefWidth="195.0" promptText="Descripción:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton fx:id="buttoncancel" layoutX="678.0" layoutY="404.0" onAction="#onActionCancelar" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="CANCELAR" />
+   </children>
+</AnchorPane>

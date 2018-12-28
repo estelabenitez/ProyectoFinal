@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<AnchorPane id="AnchorPane" prefHeight="608.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="edu.snpp.proyectofinal.RegistroConcepto.RegistroConceptoFXMLController">
+   <children>
+      <Label layoutX="201.0" layoutY="65.0" prefHeight="56.0" prefWidth="317.0" text=" Lista de Concepto" textFill="#205183">
+         <font>
+            <Font name="FreeSerif" size="39.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="60.0" layoutY="133.0" onAction="#onActionBuscar" style="-fx-background-color: lightblue; -fx-border-radius: ;" text="Buscar">
+         <graphic>
+            <FontIcon iconLiteral="gmi-search" iconSize="20" />
+         </graphic>
+      </JFXButton>
+      <JFXTextField fx:id="txfbuscar" layoutX="154.0" layoutY="134.0" onKeyPressed="#OnActionKey" prefHeight="26.0" prefWidth="207.0" />
+      <Label layoutX="873.0" layoutY="93.0" prefHeight="41.0" prefWidth="245.0" text="Registre un Concepto" textFill="#205183">
+         <font>
+            <Font name="FreeSerif" size="26.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="nombtxf" labelFloat="true" layoutX="829.0" layoutY="221.0" prefHeight="30.0" prefWidth="187.0" promptText="Concepto:" />
+      <JFXTextField fx:id="montotxf" labelFloat="true" layoutX="829.0" layoutY="289.0" prefHeight="30.0" prefWidth="114.0" promptText="Monto:" />
+      <JFXButton fx:id="agregar" layoutX="831.0" layoutY="392.0" onAction="#onActionAgregar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Agregar" />
+      <JFXButton layoutX="965.0" layoutY="392.0" onAction="#onActionActualizar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Actualizar" />
+      <JFXButton layoutX="1102.0" layoutY="392.0" onAction="#onActionEliminar" style="-fx-background-color: lightblue; -fx-border-radius: 100;" text="Eliminar" />
+      <TableView fx:id="lista" layoutX="60.0" layoutY="199.0" prefHeight="373.0" prefWidth="584.0">
+         <columns>
+            <TableColumn fx:id="colconcepto" prefWidth="219.0" text="Concepto" />
+            <TableColumn fx:id="colmonto" prefWidth="201.0" text="Monto" />
+            <TableColumn fx:id="colTipo" prefWidth="97.0" text="Tipo" />
+            <TableColumn fx:id="colModif" prefWidth="66.0" />
+         </columns>
+      </TableView>
+      <RadioButton fx:id="radioingreso" layoutX="824.0" layoutY="166.0" mnemonicParsing="false" onAction="#OnActionIngreso" prefHeight="30.0" prefWidth="114.0" text="Ingresos">
+         <toggleGroup>
+            <ToggleGroup fx:id="Seleccionar" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="radiogasto" layoutX="966.0" layoutY="165.0" mnemonicParsing="false" onAction="#OnAcionRadioGasto" prefHeight="30.0" prefWidth="114.0" text="Gastos" toggleGroup="$Seleccionar" />
+   </children>
+</AnchorPane>

@@ -51,6 +51,8 @@ public class MovimientoCaja implements Serializable {
     private Integer totalentrada;
     @Column(name = "totalsalida")
     private Integer totalsalida;
+    @Column(name = "habilitado")
+    private Boolean habilitado;
     @JoinColumn(name = "empleado", referencedColumnName = "idempleado")
     @ManyToOne(optional = false)
     private Empleado empleado;
@@ -110,6 +112,14 @@ public class MovimientoCaja implements Serializable {
 
     public void setTotalsalida(Integer totalsalida) {
         this.totalsalida = totalsalida;
+    }
+
+    public Boolean getHabilitado() {
+        return habilitado;
+    }
+
+    public void setHabilitado(Boolean habilitado) {
+        this.habilitado = habilitado;
     }
 
     public Empleado getEmpleado() {

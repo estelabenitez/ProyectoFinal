@@ -1,20 +1,17 @@
 
-package edu.snpp.proyectofinal.listaParentesco;
+package edu.snpp.proyectofinal.inscripcion;
 
 import edu.snpp.proyectofinal.entidades.Alumno;
-import edu.snpp.proyectofinal.entidades.DetalleEncargado;
-import javafx.scene.control.TableCell;
-
+import javafx.scene.control.ListCell;
 
 /**
  *
  * @author estela
  */
-public class AlumnoTableCell extends TableCell<DetalleEncargado , Alumno>{
-    
+public class AlumnoListCell extends ListCell<Alumno>{
     @Override
          protected void updateItem(Alumno item, boolean empty){
-          if(!empty && item!= null){
+          if(!empty){
               
               this.setText(item.getNombre()+" "+ item.getApellido());
           }
@@ -24,7 +21,6 @@ public class AlumnoTableCell extends TableCell<DetalleEncargado , Alumno>{
           }
           super.updateItem(item, empty);
       }
-
     
     
 }

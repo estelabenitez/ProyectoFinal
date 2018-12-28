@@ -7,7 +7,6 @@ package edu.snpp.proyectofinal.entidades;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +14,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -40,14 +38,16 @@ public class DetalleCaja implements Serializable {
     @Column(name = "iddetallecaja")
     private Integer iddetallecaja;
     @Column(name = "hora")
-    @Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.TIMESTAMP)
     private Date hora;
-    @Column(name = "monto")
-    private Integer monto;
-    @Column(name = "tipomovimiento")
-    private Boolean tipomovimiento;
-    @ManyToMany(mappedBy = "detalleCajaList")
-    private List<Alumno> alumnoList;
+    @Column(name = "entrada")
+    private Integer entrada;
+    @Column(name = "salida")
+    private Integer salida;
+    @Column(name = "descripcion")
+    private String descripcion;
+    @Column(name = "numfactura")
+    private String numfactura;
     @JoinColumn(name = "caja", referencedColumnName = "idcaja")
     @ManyToOne(optional = false)
     private MovimientoCaja caja;
@@ -78,28 +78,36 @@ public class DetalleCaja implements Serializable {
         this.hora = hora;
     }
 
-    public Integer getMonto() {
-        return monto;
+    public Integer getEntrada() {
+        return entrada;
     }
 
-    public void setMonto(Integer monto) {
-        this.monto = monto;
+    public void setEntrada(Integer entrada) {
+        this.entrada = entrada;
     }
 
-    public Boolean getTipomovimiento() {
-        return tipomovimiento;
+    public Integer getSalida() {
+        return salida;
     }
 
-    public void setTipomovimiento(Boolean tipomovimiento) {
-        this.tipomovimiento = tipomovimiento;
+    public void setSalida(Integer salida) {
+        this.salida = salida;
     }
 
-    public List<Alumno> getAlumnoList() {
-        return alumnoList;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setAlumnoList(List<Alumno> alumnoList) {
-        this.alumnoList = alumnoList;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getNumfactura() {
+        return numfactura;
+    }
+
+    public void setNumfactura(String numfactura) {
+        this.numfactura = numfactura;
     }
 
     public MovimientoCaja getCaja() {

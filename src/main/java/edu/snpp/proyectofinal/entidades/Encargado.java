@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package edu.snpp.proyectofinal.entidades;
 
 import java.io.Serializable;
@@ -129,8 +133,7 @@ public class Encargado implements Serializable {
 
     @Override
     public String toString() {
-        //return "edu.snpp.proyectofinal.entidades.Encargado[ idencargado=" + idencargado + " ]";
-        return this.nombre+" "+this.apellido;
+        return "edu.snpp.proyectofinal.entidades.Encargado[ idencargado=" + idencargado + " ]";
     }
     
 }

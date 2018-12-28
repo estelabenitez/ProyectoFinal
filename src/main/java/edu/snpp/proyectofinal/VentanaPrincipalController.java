@@ -80,6 +80,18 @@ public class VentanaPrincipalController implements Initializable {
     private void OnActionListaParentesco(ActionEvent event) {
          this.cargar("/fxml/listaParentesco/listaParentescoFXML.fxml", "Lista de Parentesco");
     }
+
+    @FXML
+    private void OnActionConcepto(ActionEvent event) {
+        this.cargar("/fxml/RegistroConcepto/registroConceptoFXML.fxml", "Registro de Conceptos");
+    }
+
+    @FXML
+    private void OnActionPagos(ActionEvent event) {
+        this.cargar("/fxml/Pagos/PagosFXML.fxml", "Registro de Pagos");
+    }
+    
+    
     
     
 
