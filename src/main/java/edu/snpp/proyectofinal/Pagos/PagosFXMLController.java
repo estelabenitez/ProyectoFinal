@@ -2,6 +2,7 @@ package edu.snpp.proyectofinal.Pagos;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
 import edu.snpp.proyectofinal.entidades.Concepto;
 import edu.snpp.proyectofinal.entidades.DetalleCaja;
@@ -16,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.AnchorPane;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -45,6 +47,8 @@ public class PagosFXMLController implements Initializable {
     private JFXButton buttoncancel;
     @FXML
     private JFXTextField numfac;
+    @FXML
+    private AnchorPane pane;
 
     /**
      * Initializes the controller class.
@@ -109,6 +113,8 @@ public class PagosFXMLController implements Initializable {
         em.getTransaction().begin();
         em.persist(dc);
         em.getTransaction().commit();
+        JFXSnackbar sb = new JFXSnackbar(pane);
+        sb.show("El registro se a completado con éxito", 5000);
         this.combconcep.getSelectionModel().clearSelection();
     }
 

@@ -4,6 +4,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXSnackbar;
 
 import com.jfoenix.controls.JFXTextField;
 import edu.snpp.proyectofinal.entidades.Alumno;
@@ -19,6 +20,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -54,6 +56,8 @@ public class RegistroAlumnoFXMLController implements Initializable {
     boolean al=false;
     @FXML
     private JFXComboBox<String> combactivo;
+    @FXML
+    private AnchorPane pane;
 
     /**
      * Initializes the controller class.
@@ -105,6 +109,8 @@ public class RegistroAlumnoFXMLController implements Initializable {
             em.persist(a);                
             }
             em.getTransaction().commit();
+            JFXSnackbar sb = new JFXSnackbar(pane);
+            sb.show("El registro se a completado con éxito", 5000);
             this.combactivo.getSelectionModel().clearSelection();//limpiar combobox
         }
     }

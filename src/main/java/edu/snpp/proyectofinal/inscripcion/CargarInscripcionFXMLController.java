@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXPopup;
+import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
 import edu.snpp.proyectofinal.entidades.Alumno;
 
@@ -36,6 +37,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.AnchorPane;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -81,6 +83,8 @@ public class CargarInscripcionFXMLController implements Initializable {
     private JFXButton agregar;
     @FXML
     private TableColumn colModif;
+    @FXML
+    private AnchorPane pane;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -213,6 +217,8 @@ public class CargarInscripcionFXMLController implements Initializable {
             em.getTransaction().begin();
             em.persist(in);
             em.getTransaction().commit();
+            JFXSnackbar sb = new JFXSnackbar(pane);
+            sb.show("El registro se a completado con éxito", 5000);
 
         } else {
 
@@ -233,6 +239,8 @@ public class CargarInscripcionFXMLController implements Initializable {
             em.getTransaction().begin();
             em.merge(in);
             em.getTransaction().commit();
+            JFXSnackbar sb = new JFXSnackbar(pane);
+            sb.show("El registro se a completado con éxito", 5000);
             this.grado.getSelectionModel().clearSelection();//limpiar combobox
             
             agregar.setText("Agregar");
@@ -260,6 +268,8 @@ public class CargarInscripcionFXMLController implements Initializable {
             em.getTransaction().begin();
             em.remove(em.merge(lista.getSelectionModel().getSelectedItem()));
             em.getTransaction().commit();
+            JFXSnackbar sb = new JFXSnackbar(pane);
+            sb.show("La acción se a completado con éxito", 5000);
             cargardatos();
         }
     }

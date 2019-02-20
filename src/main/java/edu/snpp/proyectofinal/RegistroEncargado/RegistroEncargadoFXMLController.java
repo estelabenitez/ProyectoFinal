@@ -2,6 +2,7 @@
 package edu.snpp.proyectofinal.RegistroEncargado;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXSnackbar;
 import com.jfoenix.controls.JFXTextField;
 import edu.snpp.proyectofinal.entidades.Encargado;
 import java.net.URL;
@@ -10,6 +11,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -38,6 +40,8 @@ public class RegistroEncargadoFXMLController implements Initializable {
     @FXML
     private TextField txfid;
     boolean al=false;
+    @FXML
+    private AnchorPane pane;
 
     /**
      * Initializes the controller class.
@@ -82,6 +86,8 @@ public class RegistroEncargadoFXMLController implements Initializable {
             em.persist(e);                
             }
             em.getTransaction().commit();
+            JFXSnackbar sb = new JFXSnackbar(pane);
+            sb.show("El registro se a completado con éxito", 5000);
         }
     }
     

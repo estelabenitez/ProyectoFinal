@@ -1,6 +1,7 @@
 package edu.snpp.proyectofinal.RegistroConcepto;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXSnackbar;
 
 import com.jfoenix.controls.JFXTextField;
 import edu.snpp.proyectofinal.entidades.Concepto;
@@ -21,6 +22,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -62,6 +64,8 @@ public class RegistroConceptoFXMLController implements Initializable {
     private ToggleGroup Seleccionar;
     
     Concepto conc;
+    @FXML
+    private AnchorPane pane;
 
     /**
      * Initializes the controller class.
@@ -162,6 +166,8 @@ public class RegistroConceptoFXMLController implements Initializable {
             em.getTransaction().begin();
             em.persist(c);
             em.getTransaction().commit();
+            JFXSnackbar sb = new JFXSnackbar(pane);
+            sb.show("El registro se a completado con éxito", 5000);
 
         } else {
 
@@ -179,6 +185,8 @@ public class RegistroConceptoFXMLController implements Initializable {
             em.getTransaction().begin();
             em.merge(conc);
             em.getTransaction().commit();
+            JFXSnackbar sb = new JFXSnackbar(pane);
+            sb.show("El registro se a completado con éxito", 5000);
 
             agregar.setText("Agregar");
 
